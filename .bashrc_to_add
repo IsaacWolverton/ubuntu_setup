@@ -1,0 +1,3 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias tree='tree -h --du'

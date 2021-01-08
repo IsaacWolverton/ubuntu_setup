@@ -1,0 +1,8 @@
+[user]
+        email = wolverton.isaac@gmail.com
+        name = IsaacWolverton
+[core]
+        editor = vim
+[alias]
+        lol = log --graph --oneline --decorate --color --all
+    	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
