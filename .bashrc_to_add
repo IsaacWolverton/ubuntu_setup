@@ -3,3 +3,8 @@ alias ...='cd ../..'
 alias tree='tree -h --du'
 alias ve='python3 -m venv ./venv'
 alias va='source ./venv/bin/activate'
+
+# start tmux at startup
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux
+fi
