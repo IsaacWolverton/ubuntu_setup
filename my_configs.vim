@@ -11,6 +11,7 @@ inoremap kj <Esc>
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'justinmk/vim-sneak'
 call plug#end()
 
 " coc.nvim related settings ####################################################
