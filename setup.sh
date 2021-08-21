@@ -11,7 +11,7 @@ curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # install python packages
-sudo pip3 install virtualenv jupyter numpy pandas matplotlib autopep8 joblib
+sudo pip3 install virtualenv jupyter numpy pandas matplotlib autopep8 joblib thefuck
 
 # add to .bashrc
 cat .bashrc_to_add >> ~/.bashrc
