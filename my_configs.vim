@@ -6,11 +6,19 @@ set nowrap
 set number
 set cc=80
 
+fun! SetTab(num)
+    let &l:tabstop = a:num
+    let &l:shiftwidth = a:num
+endfun
+
+command! -nargs=1 SetTab :call SetTab(<q-args>) " allows for 'SetTab 2' instead of ':call SetTab(2)'
+
 inoremap jk <Esc>
 inoremap kj <Esc>
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'justinmk/vim-sneak', {'branch': 'release'}
 call plug#end()
 
 " coc.nvim related settings ####################################################
