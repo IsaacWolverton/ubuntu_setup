@@ -7,7 +7,7 @@ sudo apt -y autoremove
 sudo apt install -y vim tree tmux ripgrep python3-pip python3-dev cmake git curl htop gparted net-tools build-essential pigz parallel
 
 # install nodejs
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # install python packages
