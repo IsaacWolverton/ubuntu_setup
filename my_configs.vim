@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 set nowrap
 set number
-set cc=80
+set cc=95
 
 fun! SetTab(num)
     let &l:tabstop = a:num
