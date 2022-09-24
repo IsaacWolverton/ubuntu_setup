@@ -6,12 +6,11 @@ sudo apt -y autoremove
 # install new packages
 sudo apt install -y vim tree tmux ripgrep python3-pip python3-dev cmake git curl htop gparted net-tools build-essential pigz parallel
 
-# install nodejs
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
 # install python packages
-sudo pip3 install virtualenv jupyter numpy pandas matplotlib autopep8 joblib thefuck
+sudo pip3 install virtualenv jupyter numpy pandas matplotlib autopep8 joblib
+
+# install nodejs lts
+curl -sL install-node.vercel.app/lts | sudo bash -s -- -y
 
 # add to .bashrc
 cat .bashrc_to_add >> ~/.bashrc
@@ -22,6 +21,10 @@ cp .tmux.conf ~/.tmux.conf
 
 # setup git
 cp .gitconfig ~/.gitconfig
+
+# setup fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
 
 # setup vim
 git clone --depth=1 https://github.com/amix/vimrc.git ~/.vim_runtime

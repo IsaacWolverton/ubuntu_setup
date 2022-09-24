@@ -1,11 +1,33 @@
+set -o vi
+bind '"jk":vi-movement-mode'
+
 alias ..='cd ..'
 alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 alias tree='tree -h --du'
 alias ve='python3 -m venv ./venv'
 alias va='source ./venv/bin/activate'
-eval $(thefuck --alias --enable-experimental-instant-mode)
+alias sbash='source ~/.bashrc'
+alias vbash='vim ~/.bashrc'
 
-# start tmux at startup
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux
-fi
+alias tmux_attach='tmux attach -t sess1 || tmux new -s sess1'
+
+# time related aliases and functions
+alias now='date +%s'
+
+sec_since() {
+    echo \($(date +%s) - $1\) | bc -l
+}
+
+min_since() {
+    echo \($(date +%s) - $1\) / 60 | bc -l
+}
+
+hr_since() {
+    echo \($(date +%s) - $1\) / 3600 | bc -l
+}
+
+day_since() {
+    echo \($(date +%s) - $1\) / 86400 | bc -l
+}
