@@ -31,3 +31,7 @@ hr_since() {
 day_since() {
     echo \($(date +%s) - $1\) / 86400 | bc -l
 }
+
+# Override the prompt to contain a non-breaking space to enable tmux prompt jumping
+# Insert non-breaking space with ctrl-k <space><space> confirm with ga in normal mode.              " "
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$ '

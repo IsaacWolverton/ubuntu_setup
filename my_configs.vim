@@ -4,7 +4,7 @@ set nocompatible
 filetype off
 set nowrap
 set number
-set cc=95
+set cc=100
 
 fun! SetTab(num)
     let &l:tabstop = a:num
@@ -15,6 +15,15 @@ command! -nargs=1 SetTab :call SetTab(<q-args>) " allows for 'SetTab 2' instead 
 
 inoremap jk <Esc>
 inoremap kj <Esc>
+
+" Space to toggle fold
+nnoremap <space> za
+
+" Y to copy until end of line
+nnoremap Y y$
+
+" ,+s to substitute all instances of word under cursor
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
